@@ -2,7 +2,8 @@ name: Daily UTC+9 Time Update
 
 on:
   schedule:
-    - cron: '0 15 * * *'  # 每天UTC时间15:00分（北京时间23:00分）运行
+    - cron: '0 15 * * *'  
+  workflow_dispatch:  
 
 jobs:
   update-time:
@@ -22,8 +23,8 @@ jobs:
         git config --local user.name "github-actions-bot"
         git config --local user.email "github-actions-bot@github.com"
         git add utc9-time.txt
-        git commit -m "Update UTC+9 time" || true
+        git commit -m "Update UTC+9 time" || echo "No changes to commit"
 
     - name: Push changes
       run: |
-        git push origin HEAD:$(git rev-parse --abbrev-ref HEAD)
+        git push origin $(git rev-parse --abbrev-ref HEAD)
