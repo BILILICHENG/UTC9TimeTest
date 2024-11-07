@@ -2,8 +2,8 @@ name: Daily UTC+9 Time Update
 
 on:
   schedule:
-    - cron: '0 15 * * *'  
-  workflow_dispatch:  
+    - cron: '0 15 * * *'  # 每天 UTC 时间 15:00 执行
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   update-time:
@@ -27,4 +27,4 @@ jobs:
 
     - name: Push changes
       run: |
-        git push origin $(git rev-parse --abbrev-ref HEAD)
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:$(git rev-parse --abbrev-ref HEAD)
