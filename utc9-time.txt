@@ -2,7 +2,7 @@
 1970-12-14
 //
 202412050336
-ERROR
+ERROR:Saekoチームは今日サービスを提供しません！12月14日復旧===The Saeko team is not providing services today! Resumption of operations on December 14th
 次の大会の時間：2024年12月31日「火曜」20:35~28:00
 主催者：LI_CHENG「暫定」「募集中」
 課題曲：00000 // Null // Null
