@@ -6,8 +6,13 @@ utc9_date=$(TZ=Asia/Tokyo date +"%Y-%m-%d")
 utc9_year=$(TZ=Asia/Tokyo date +"%Y")
 utc9_month_day=$(TZ=Asia/Tokyo date +"%m-%d")
 
-ERROR_DATES=("0000-12-13")
+if [ ! -f "$file" ]; then
+    echo "$utc9_date" > "$file"
+else
+    sed -i "1s/.*/$utc9_date/" "$file"
+fi
 
+ERROR_DATES=("0000-12-13")
 OK_DATES=("0000-12-14")
 
 line2=$(sed -n '2p' "$file")
