@@ -12,8 +12,8 @@ else
     sed -i "1s/.*/$utc9_date/" "$file"
 fi
 
-ERROR_DATES=("0000-12-13")
-OK_DATES=("0000-12-14")
+ERROR_DATES=("0000-12-13" "2025-09-02")
+OK_DATES=("0000-12-14" "2025-09-05")
 
 line2=$(sed -n '2p' "$file")
 line5=$(sed -n '5p' "$file")
